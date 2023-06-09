@@ -1,0 +1,90 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Financial
+    |--------------------------------------------------------------------------
+    */
+
+'financial_summary' => 'Финансовая сводка',
+'financial_documents' => 'Финансовые документы',
+'financial_summary_no_result' => 'Нет финансовых документов!',
+'financial_summary_no_result_hint' => 'Финансовые документы включают все финансовые транзакции на вашем аккаунте.',
+'summary_page_title' => 'Финансовая сводка',
+'sales_report' => 'Отчет о продажах',
+'sales_history' => 'История продаж',
+'sales_statistics' => 'Статистика продаж',
+'total_income' => 'Общий доход',
+'income' => 'Доход',
+'show_only_webinars' => 'Показать только вебинары',
+'total_amount' => 'Общая сумма',
+'total_sales' => 'Всего продаж',
+'sales_no_result' => 'Ваш список продаж пуст...',
+'sales_no_result_hint' => 'Ваша история продаж будет отображаться здесь.',
+
+'account_summary' => 'Сводка по аккаунту',
+'payout' => 'Выплата',
+'payouts_history' => 'История выплат',
+'request_payout' => 'Запросить выплату',
+'payout_request' => 'Запрос выплаты',
+'account' => 'Аккаунт',
+'charge' => 'Списание',
+'account_charge' => 'Списание с аккаунта',
+'ready_to_payout' => 'Готово к выплате',
+'payout_no_result' => 'Ваш список выплат пуст!',
+'payout_no_result_hint' => 'Вы можете запросить выплату, если ваш баланс превышает минимальную сумму выплаты.',
+
+'payout_confirmation' =>  'Подтверждение выплаты',
+'payout_confirmation_hint' =>  'Пожалуйста, проверьте следующую информацию для вашего запроса выплаты, мы переведем деньги на следующие счета.',
+'account_type' => 'Тип счета',
+'select_account_type' => 'Выберите тип счета',
+'account_id' => 'ID счета',
+'iban' => 'IBAN',
+'identity_scan' => 'Скан паспорта',
+'address' => 'Адрес',
+'charge_account' => 'Пополнить аккаунт',
+'select_the_payment_gateway' => 'Выберите платежный шлюз',
+'select_a_payment_gateway' => 'Выберите платежный шлюз',
+'razorpay_payment_gateway' => 'оплата через платежный шлюз Razorpay',
+'pay_via' => 'Оплатить через',
+'paypal' => 'PayPal',
+'stripe' => 'Stripe',
+'paytm' => 'Paytm',
+'finalize_payment' => 'Завершить оплату',
+'select_the_account' => 'Выберите аккаунт',
+'referral_code' => 'Реферальный код',
+'bank_accounts_information' => 'Информация о банковских счетах',
+'offline_transactions_history' => 'История офлайн-транзакций',
+'bank' => 'Банк',
+'card_id' => 'ID карты',
+'approved' => 'Подтверждено',
+'approve' => 'Подтвердить',
+'offline' => 'Офлайн-платеж',
+'offline_no_result' => 'Нет запросов на офлайн-платеж...',
+'offline_no_result_hint' => 'Вы можете пополнить свой аккаунт, используя систему офлайн-платежей.',
+'offline_payment_request_success_store' => 'Ваш запрос на офлайн-платеж успешно отправлен...',
+'charge_account_page_title' => 'Пополнение аккаунта',
+'subscribe' => 'Подписаться',
+'subscribes' => 'Подписки',
+'days_of_subscription' => 'дней подписки',
+'my_active_plan' => 'Мой активный план',
+'active_plan' => 'Активный план',
+'remained_downloads' => 'Осталось загрузок',
+'days_remained' => 'Осталось дней',
+'select_a_subscribe_plan' => 'Выберите план подписки',
+'subcribe_no_result' => 'У вас нет активных планов подписки!',
+'subcribe_no_result_hint' => 'Вы можете выбрать план подписки из следующего списка и записаться на курсы.',
+
+'webinar' => 'Курс',
+'Meeting' => 'Встреча',
+'refund' => 'Возврат',
+
+'manual_document' => 'Ручной документ',
+'automatic_document' => 'Автоматический документ',
+'purchase' => 'Покупка',
+'payouts_requests' => 'Запросы на выплату',
+
+
+];
