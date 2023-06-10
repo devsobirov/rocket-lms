@@ -21,8 +21,63 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class HomeController extends Controller
+class  HomeController extends Controller
 {
+    public function v2()
+    {
+        $seoSettings = getSeoMetas('home');
+        $pageTitle = !empty($seoSettings['title']) ? $seoSettings['title'] : trans('home.home_title');
+        $pageDescription = !empty($seoSettings['description']) ? $seoSettings['description'] : trans('home.home_title');
+        $pageRobot = getPageRobot('home');
+
+        $latestWebinars = Webinar::where('status', Webinar::$active)
+            ->where('private', false)
+            ->orderBy('updated_at', 'desc')
+            ->limit(8)
+            ->get();
+
+        $instructors = User::where('role_name', Role::$teacher)
+            ->select('id', 'full_name', 'avatar', 'bio')
+            ->where('status', 'active')
+            ->where(function ($query) {
+                $query->where('ban', false)
+                    ->orWhere(function ($query) {
+                        $query->whereNotNull('ban_end_at')
+                            ->where('ban_end_at', '<', time());
+                    });
+            })
+            ->limit(8)
+            ->get();
+        $testimonials = Testimonial::where('status', 'active')->limit(3)->get();
+
+        $data = [
+            'pageTitle' => $pageTitle,
+            'pageDescription' => $pageDescription,
+            'pageRobot' => $pageRobot,
+            'latestWebinars' => $latestWebinars ?? [],
+            'testimonials' => $testimonials ?? [],
+            'instructors' => $instructors
+        ];
+
+        return view('web.v2.home', $data);
+    }
+
+    public function plans()
+    {
+        $seoSettings = getSeoMetas('plans');
+        $pageTitle = !empty($seoSettings['title']) ? $seoSettings['title'] : trans('home.subscribe_now');
+        $pageDescription = !empty($seoSettings['description']) ? $seoSettings['description'] : trans('home.subscribe_now_hint');
+        $pageRobot = getPageRobot('plans');
+        $subscribes = Subscribe::all();
+
+        return view('web.v2.plans', [
+            'pageTitle' => $pageTitle,
+            'pageDescription' => $pageDescription,
+            'pageRobot' => $pageRobot,
+            'subscribes' => $subscribes
+        ]);
+    }
+
     public function index()
     {
         $homeSections = HomeSection::orderBy('order', 'asc')->get();

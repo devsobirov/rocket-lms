@@ -17,10 +17,10 @@ Route::get('/mobile-app', 'Web\MobileAppController@index')->middleware(['share']
 
 
 Route::group(['namespace' => 'Auth', 'middleware' => ['check_mobile_app', 'share']], function () {
-    Route::get('/login', 'LoginController@showLoginForm');
+    Route::get('/login', 'LoginController@showLoginForm')->name('login');
     Route::post('/login', 'LoginController@login');
     Route::get('/logout', 'LoginController@logout');
-    Route::get('/register', 'RegisterController@showRegistrationForm');
+    Route::get('/register', 'RegisterController@showRegistrationForm')->name('register');
     Route::post('/register', 'RegisterController@register');
     Route::get('/verification', 'VerificationController@index');
     Route::post('/verification', 'VerificationController@confirmCode');
@@ -47,7 +47,9 @@ Route::group(['namespace' => 'Web', 'middleware' => ['check_mobile_app', 'impers
     // set Locale
     Route::post('/locale', 'LocaleController@setLocale');
 
-    Route::get('/', 'HomeController@index');
+    //Route::get('/', 'HomeController@index');
+    Route::get('/', 'HomeController@v2')->name('homepage');
+    Route::get('/plans', 'HomeController@plans')->name('plans');
 
     Route::get('/getDefaultAvatar', 'DefaultAvatarController@make');
 

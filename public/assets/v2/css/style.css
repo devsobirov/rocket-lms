@@ -1,0 +1,322 @@
+:root {
+    --bs-blue: #3e78ff !important;
+    --bs-primary: #3e78ff !important;
+}
+body, * {
+    font-family: 'Nunito', sans-serif !important;
+}
+
+a {text-decoration: none; color: inherit;}
+button {outline: none;}
+.btn {outline: none;}
+
+.btn-primary {
+    background-color: #1348c2;
+    border-color: #1348c2;
+}
+
+.text-primary {
+    color: #1348c2;
+}
+.text-dark-blue {
+    color: rgb(0, 71, 103);
+}
+.btn-outline-primary {
+    color: #1348c2;
+    border-color: #1348c2;
+}
+
+.btn-primary:hover {
+    background-color: #3e78ff;
+    border-color: #3e78ff;
+}
+.btn-outline-primary:hover {
+    background-color: #3e78ff;
+    border-color: #3e78ff;
+}
+
+.btn-dark-blue {
+    background: rgb(0, 71, 103);
+    color: white;
+    font-size: 15px;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+}
+.btn-dark-blue:hover {
+    background: rgba(0, 71, 103, 0.8);
+    color: white;
+}
+.btn-outline-dark-blue {
+    background: white;
+    color: rgb(0, 71, 103);
+    border: 1px solid rgb(0, 71, 103);
+    font-size: 15px;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+}
+.btn-outline-dark-blue:hover {
+    background: rgba(0, 71, 103, 0.25);
+    color: rgb(0, 71, 103);
+}
+
+.btn-pink {
+    background: #e29fa8;
+    color: white;
+    font-size: 15px;
+    padding: 0.5rem 2rem;
+    border-radius: 0;
+}
+.btn-pink:hover {
+    color: white;
+    background: lightpink;
+}
+
+.lang-menu-dropdown .dropdown-menu {
+    min-width: 4rem;
+}
+.navbar-light .nav-item .nav-link, .navbar .dropdown-item {color: #1348c2; font-weight: bold}
+.navbar-light .nav-item .nav-link:hover,
+.navbar-light .nav-item .nav-link:focus,
+.navbar-light .nav-item .nav-link.active,
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item.active {color: #3e78ff}
+.bg-light {background: #f8f9fa;}
+
+.home-banner .banner-block {
+    min-height: 70vh;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem;
+}
+
+.banner-block img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.line-header {
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.line-header h2 {
+    color: #3e78ff;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid #3e78ff;
+}
+
+.feature-box {
+    padding: 0 1.5rem;
+}
+
+.feature-box .feature-title {
+    margin-bottom: 0.75rem;
+}
+
+.course-item {
+    margin: 10px 30px;
+    background: white;
+}
+.course-item .course-img {
+    width: 100%;
+    height: 11.25rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.course-details {
+    padding: 0 1.5rem;
+}
+.course-details h4 a {
+    font-size: 18px;
+}
+.course-details p {
+    font-size: 15px;
+}
+
+.flick-nav .right,
+.flick-nav .left {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.team-item {
+    margin: 10px 30px;
+}
+
+.team-item .item-img {
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 0.75rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.team-item h4 {
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+}
+
+.team-item p {
+    font-size: 14px;
+}
+
+.progress-steps {
+    padding: 80px 0;
+}
+.step-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 0 1rem;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+footer {
+    padding: 80px 20px;
+    background: rgb(0, 71, 103);;
+}
+
+.testimonials svg {
+    fill: #dbc01f;
+}
+
+.footer-logo {
+    display: block;
+    width: 170px;
+    height: 50px;
+}
+.footer-links {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+.border-blue {
+    border-top: 1px solid #305995;
+}
+
+.subscribe-plan {
+    position: relative;
+    border: 3px solid transparent;
+    transition: all .4s ease;
+    top: 0
+}
+
+.subscribe-plan .badge-popular {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 10px 0 10px 0
+}
+
+.subscribe-plan:hover {
+    top: -15px;
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,.15)!important
+}
+
+.subscribe-plan .plan-icon {
+    width: 120px;
+    height: 120px
+}
+
+.subscribe-plan .plan-feature li {
+    position: relative;
+    color: #171347
+}
+
+.subscribe-plan .plan-feature li:after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--secondary)
+}
+
+.rtl .subscribe-plan .plan-feature li:after {
+    left: auto;
+    right: -20px
+}
+
+.pt-50 { padding-top: 50px;}
+.mt-50 {margin-top: 50px}
+.mt-30{margin-top: 30px}
+.mt-20{margin-top: 20px}
+.mt-10{margin-top: 10px}
+.ml-5{margin-left: 5px}
+.pb-20 {padding-bottom: 20px;}
+.px-20 {padding-left: 20px; padding-right: 20px;}
+.px-15{padding-left: 15px; padding-right: 15px;}
+.font-30 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.22;
+}
+.font-36{
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.22;
+}
+.font-weight-500 {font-weight: 500}
+.btn-block {
+    display: block!important;
+    text-align: center;
+    width: 100%;
+}
+.subscribe-plan .plan-icon {
+    width: 120px;
+    height: 120px;
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 50% 50%;
+    object-position: 50% 50%;
+}
+
+.site-top-banner {
+    height: 530px;
+}
+.search-top-banner img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.search-top-banner .top-search-categories-form .course-count-badge {
+    background-color: hsla(0,0%,94.5%,.5);
+}
+@media screen and (max-width: 767px){
+    .home-banner .d-sm-none {display: none !important;}
+    .step-card {padding: 1rem; margin-bottom: .75rem;}
+    .footer-logo {margin: auto}
+    .footer-links {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+    .site-top-banner {
+        height: 230px;
+    }
+}
