@@ -72,6 +72,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="input-label" for="certificate_additional">Вид деятельности</label>
+                            <input name="business_type" id="business_type" class="form-control @error('business_type') is-invalid @enderror"/>
+                            @error('business_type')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <label class="input-label" for="certificate_additional">{{ trans('update.certificate_additional') }}</label>
                             <input name="certificate_additional" id="certificate_additional" class="form-control @error('certificate_additional') is-invalid @enderror"/>
                             @error('certificate_additional')

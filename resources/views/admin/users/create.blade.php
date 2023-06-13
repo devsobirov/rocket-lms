@@ -41,6 +41,19 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label>Тип деятельности</label>
+                                            <input type="text" name="business_type"
+                                                   class="form-control  @error('business_type') is-invalid @enderror"
+                                                   value="{{ !empty($user) ? $user->business_type : old('business_type') }}"
+                                                   placeholder="Тип деятельности"/>
+                                            @error('business_type')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="username">{{ trans('auth.email_or_mobile') }}:</label>
                                             <input name="username" type="text" class="form-control @error('email') is-invalid @enderror @error('mobile') is-invalid @enderror" id="username" value="{{ old('email') }}" aria-describedby="emailHelp">
                                             @error('email')

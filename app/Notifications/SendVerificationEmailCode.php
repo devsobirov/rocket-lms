@@ -8,20 +8,9 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use function Matrix\trace;
 
-class SendVerificationEmailCode extends Notification
+class SendVerificationEmailCode extends Notification implements ShouldQueue
 {
-    private $notifiable;
-
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct($notifiable)
-    {
-        $this->notifiable = $notifiable;
-    }
-
+    use Queueable;
     /**
      * Get the notification's delivery channels.
      *
@@ -42,11 +31,12 @@ class SendVerificationEmailCode extends Notification
     public function toMail($notifiable)
     {
         $generalSettings = getGeneralSettings();
+        $siteName = !empty($generalSettings['site_name']) ? $generalSettings['site_name'] : '';
         $subject = trans('auth.email_confirmation');
 
         $confirm = [
-            'title' => $subject . ' ' . trans('auth.in') . ' ' . $generalSettings['site_name'],
-            'message' => trans('auth.email_confirmation_template_body', ['email' => $notifiable->email, 'site' => $generalSettings['site_name']]),
+            'title' => $subject . ' ' . trans('auth.in') . ' ' . $siteName,
+            'message' => trans('auth.email_confirmation_template_body', ['email' => $notifiable->email, 'site' => $siteName]),
             'code' => $notifiable->code
         ];
 

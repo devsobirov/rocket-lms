@@ -94,6 +94,7 @@ class RegisterController extends Controller
             'email' => (($registerMethod == 'email') ? 'required' : 'nullable') . '|email|max:255|unique:users',
             'term' => 'required',
             'full_name' => 'required|string|min:3',
+            'business_type' => 'nullable|string|max:255',
             'password' => 'required|string|min:6|confirmed',
             'password_confirmation' => 'required|same:password',
             'referral_code' => 'nullable|exists:affiliates_codes,code'
@@ -128,6 +129,7 @@ class RegisterController extends Controller
             'mobile' => $data['mobile'] ?? null,
             'email' => $data['email'] ?? null,
             'full_name' => $data['full_name'],
+            'business_type' => $data['business_type'] ?? null,
             'status' => User::$pending,
             'access_content' => $accessContent,
             'password' => Hash::make($data['password']),
@@ -155,7 +157,7 @@ class RegisterController extends Controller
 
         $user = $this->create($request->all());
 
-        event(new Registered($user));
+        //event(new Registered($user));
 
         $registerMethod = getGeneralSettings('register_method') ?? 'mobile';
 

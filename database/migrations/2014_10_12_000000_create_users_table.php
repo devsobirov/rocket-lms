@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
 
             $table->increments('id');
             $table->string('full_name', 128)->nullable();
+            $table->string('business_type', 255)->nullable();
             $table->string('role_name',64);
             $table->integer('role_id')->unsigned();
             $table->string('avatar', 64)->nullable();

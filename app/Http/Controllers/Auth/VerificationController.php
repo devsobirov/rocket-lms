@@ -107,10 +107,14 @@ class VerificationController extends Controller
 
             session()->put('verificationId', $verification->id);
 
-            if ($username == 'mobile') {
-                $verification->sendSMSCode();
-            } else {
-                $verification->sendEmailCode();
+            try {
+                if ($username == 'mobile') {
+                    $verification->sendSMSCode();
+                } else {
+                    $verification->sendEmailCode();
+                }
+            } catch (\Throwable $exception) {
+
             }
 
             return [

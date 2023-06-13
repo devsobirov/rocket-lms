@@ -221,6 +221,7 @@
                                         @if($user->email)
                                             <div class="text-primary text-small font-600-bold">{{ $user->email }}</div>
                                         @endif
+                                        <div class="text-primary text-small font-600-bold">{{ $user->business_type ?? '-' }}</div>
                                     </div>
                                 </div>
                             </td>

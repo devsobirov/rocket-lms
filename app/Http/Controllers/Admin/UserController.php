@@ -463,6 +463,7 @@ class UserController extends Controller
         $this->validate($request, [
             $username => ($username == 'mobile') ? 'required|numeric|unique:users' : 'required|string|email|max:255|unique:users',
             'full_name' => 'required|min:3|max:128',
+            'business_type' => 'nullable|min:3|max:255',
             'role_id' => 'required|exists:roles,id',
             'password' => 'required|string|min:6',
             'status' => 'required',
@@ -478,6 +479,7 @@ class UserController extends Controller
 
                 $user = User::create([
                     'full_name' => $data['full_name'],
+                    'business_type' => $data['business_type'] ?? null,
                     'role_name' => $role->name,
                     'role_id' => $data['role_id'],
                     $username => $data[$username],
@@ -798,6 +800,7 @@ class UserController extends Controller
 
         $this->validate($request, [
             'full_name' => 'required|min:3|max:128',
+            'business_type' => 'nullable|max:255',
             'role_id' => 'required|exists:roles,id',
             'email' => (!empty($user->email)) ? 'required|email|unique:users,email,' . $user->id . ',id,deleted_at,NULL' : 'nullable|email|unique:users',
             'mobile' => (!empty($user->mobile)) ? 'required|numeric|unique:users,mobile,' . $user->id . ',id,deleted_at,NULL' : 'nullable|numeric|unique:users',
@@ -837,6 +840,7 @@ class UserController extends Controller
 
 
         $user->full_name = !empty($data['full_name']) ? $data['full_name'] : null;
+        $user->business_type = !empty($data['business_type']) ? $data['business_type'] : null;
         $user->role_name = $role->name;
         $user->role_id = $role->id;
         $user->timezone = $data['timezone'] ?? null;

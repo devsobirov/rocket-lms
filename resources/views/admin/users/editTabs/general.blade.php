@@ -18,6 +18,19 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Тип деятельности</label>
+                    <input type="text" name="business_type"
+                           class="form-control  @error('business_type') is-invalid @enderror"
+                           value="{{ !empty($user) ? $user->business_type : old('business_type') }}"
+                           placeholder="Тип деятельности"/>
+                    @error('business_type')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label>{{ trans('/admin/main.role_name') }}</label>
                     <select class="form-control @error('role_id') is-invalid @enderror" id="roleId" name="role_id">
                         <option disabled {{ empty($user) ? 'selected' : '' }}>{{ trans('admin/main.select_role') }}</option>
